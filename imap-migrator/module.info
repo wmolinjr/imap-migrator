@@ -1,0 +1,7 @@
+desc=IMAP Account Migrator
+version=1.0
+category=tools
+longdesc=A module to migrate emails between IMAP servers using imapsync, with real-time status.
+depends=virtual-server
+webmin_depends=1.900
+daemon=no 

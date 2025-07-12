@@ -1,0 +1,7 @@
+desc=Migrador de Contas IMAP
+version=1.0
+category=tools
+longdesc=Um módulo para migrar e-mails entre servidores IMAP usando imapsync, com status em tempo real.
+depends=virtual-server
+webmin_depends=1.900
+daemon=no 

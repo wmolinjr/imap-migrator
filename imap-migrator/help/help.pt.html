@@ -1,0 +1,185 @@
+<header>Migrador de Caixas de Correio IMAP</header>
+
+Este módulo permite migrar caixas de correio de um servidor IMAP para outro
+usando a ferramenta imapsync. Ele fornece uma interface amigável para configurar
+e executar migrações de caixas de correio com monitoramento de progresso em
+tempo real.
+<p></p>
+
+<h3>Pré-requisitos</h3>
+Antes de usar este módulo, certifique-se de que:
+<ul>
+  <li>A ferramenta <b>imapsync</b> está instalada no seu sistema</li>
+  <li>
+    Você tem credenciais de acesso para ambos os servidores IMAP de origem e
+    destino
+  </li>
+  <li>
+    Há conectividade de rede entre seu servidor e ambos os servidores IMAP
+  </li>
+</ul>
+
+<h3>Aba: Credenciais</h3>
+Esta é a aba principal de configuração onde você define os detalhes de conexão:
+
+<b>Servidor de Origem:</b>
+<ul>
+  <li>
+    <b>Servidor IMAP:</b> O nome do host ou endereço IP do seu servidor IMAP de
+    origem
+  </li>
+  <li><b>Usuário:</b> O nome de usuário da caixa de correio de origem</li>
+  <li><b>Senha:</b> A senha da caixa de correio de origem</li>
+  <li><b>Segurança:</b> Escolha entre Nenhum, SSL ou TLS para a conexão</li>
+</ul>
+
+<b>Servidor de Destino:</b>
+<ul>
+  <li>
+    <b>Servidor IMAP:</b> O nome do host ou endereço IP do seu servidor IMAP de
+    destino (padrão: localhost)
+  </li>
+  <li><b>Usuário:</b> O nome de usuário da caixa de correio de destino</li>
+  <li><b>Senha:</b> A senha da caixa de correio de destino</li>
+  <li><b>Segurança:</b> Escolha entre Nenhum, SSL ou TLS para a conexão</li>
+</ul>
+
+<h3>Aba: Avançado</h3>
+Opções avançadas de configuração para a migração:
+
+<ul>
+  <li><b>Tamanho máximo:</b> Limitar o tamanho das mensagens em MB</li>
+  <li><b>Tamanho mínimo:</b> Tamanho mínimo das mensagens em MB</li>
+  <li>
+    <b>Idade máxima:</b> Pular mensagens mais antigas que os dias especificados
+  </li>
+  <li>
+    <b>Idade mínima:</b> Pular mensagens mais novas que os dias especificados
+  </li>
+  <li>
+    <b>Tipo de seleção por idade:</b> Escolha como combinar os filtros maxage e
+    minage:
+    <ul>
+      <li><b>Padrão:</b> Usar maxage ou minage independentemente</li>
+      <li>
+        <b>Intersecção:</b> Mensagens devem estar dentro do intervalo maxage E
+        minage
+      </li>
+      <li>
+        <b>União:</b> Mensagens podem estar dentro do intervalo maxage OU minage
+      </li>
+    </ul>
+  </li>
+  <li>
+    <b>Excluir da origem:</b> Remover mensagens do servidor de origem após
+    migração bem-sucedida
+  </li>
+  <li>
+    <b>Pular pastas vazias:</b> Pastas vazias da origem não são criadas no
+    destino
+  </li>
+  <li>
+    <b>Timeout de conexão da origem:</b> Timeout para conexões do servidor de
+    origem em segundos (padrão: 120)
+  </li>
+  <li>
+    <b>Timeout de conexão do destino:</b> Timeout para conexões do servidor de
+    destino em segundos (padrão: 120)
+  </li>
+  <li>
+    <b>Enviar relatório por email na origem:</b> Escolha se deseja enviar o
+    relatório final da migração para a INBOX da caixa de correio de origem
+    (padrão: Não)
+  </li>
+  <li>
+    <b>Enviar relatório por email no destino:</b> Escolha se deseja enviar o
+    relatório final da migração para a INBOX da caixa de correio de destino
+    (padrão: Sim)
+  </li>
+  <li>
+    <b>Incluir pastas:</b> Especifique padrões de pastas para incluir (ex:
+    "INBOX,Sent,Drafts")
+  </li>
+  <li>
+    <b>Excluir pastas:</b> Especifique padrões de pastas para excluir (ex:
+    "Trash,Spam")
+  </li>
+  <li>
+    <b>Pular erros:</b> Continuar a migração mesmo se algumas mensagens falharem
+  </li>
+</ul>
+
+<h3>Aba: Depurar</h3>
+Opções de depuração e log:
+
+<ul>
+  <li><b>Debug do Migrador:</b> Habilita o debug do migrador</li>
+  <li><b>Modo debug:</b> Habilitar informações de debug</li>
+  <li>
+    <b>Apenas conectar aos servidores:</b> Apenas conectar aos dois servidores e
+    imprimir informações úteis
+  </li>
+  <li>
+    <b>Modo de teste:</b> Modo de teste - mostra o que seria migrado sem
+    realmente fazer
+  </li>
+  <li><b>Mostrar comandos:</b> Exibir os comandos imapsync sendo executados</li>
+  <li><b>Debug de pastas:</b> Modo debug apenas para a parte de pastas</li>
+  <li>
+    <b>Debug de conteúdo das mensagens:</b> Debug do conteúdo das mensagens
+    transferidas (saída enorme)
+  </li>
+  <li><b>Debug de flags:</b> Modo debug para flags</li>
+  <li>
+    <b>Debug IMAP do servidor de origem:</b> Modo debug IMAP para host1 (muito
+    verboso)
+  </li>
+  <li>
+    <b>Debug IMAP do servidor de destino:</b> Modo debug IMAP para host2 (muito
+    verboso)
+  </li>
+  <li>
+    <b>Debug de consumo de memória:</b> Modo debug mostrando consumo de memória
+    após cada cópia
+  </li>
+  <li><b>Debug SSL:</b> Modo debug SSL de 0 a 4</li>
+</ul>
+
+<h3>Processo de Migração</h3>
+Depois de configurar todas as configurações:
+<ol>
+  <li>Clique no botão <b>Iniciar Migração</b></li>
+  <li>A migração será executada em background</li>
+  <li>O progresso em tempo real será exibido na janela de log</li>
+  <li>O log é atualizado automaticamente a cada 5 segundos</li>
+  <li>A migração é concluída quando você vê "Exiting with return value"</li>
+</ol>
+
+<h3>Notas Importantes</h3>
+<ul>
+  <li>Caixas de correio grandes podem levar tempo significativo para migrar</li>
+  <li>Certifique-se de espaço suficiente em disco em ambos os servidores</li>
+  <li>A estabilidade da rede é crucial para uma migração bem-sucedida</li>
+  <li>Considere usar SSL/TLS para conexões seguras</li>
+  <li>
+    Teste com uma caixa de correio pequena primeiro usando o modo de teste
+  </li>
+</ul>
+
+<hr />
+
+<h3>Links Úteis</h3>
+<ul>
+  <li>
+    <a href="https://github.com/imapsync/imapsync" target="_blank"
+      >Documentação do imapsync</a
+    >
+    - Documentação oficial e exemplos
+  </li>
+  <li>
+    <a href="https://github.com/wmolinjr/imap-migrator" target="_blank"
+      >Repositório IMAP Migrator</a
+    >
+    - Código fonte e problemas
+  </li>
+</ul>

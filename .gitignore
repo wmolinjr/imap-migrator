@@ -1,0 +1,7 @@
+# Pacotes de módulo Webmin gerados
+*.wbm.gz
+
+# Arquivos temporários e de log que podem ser criados localmente
+*.log
+*.swp
+*~ 

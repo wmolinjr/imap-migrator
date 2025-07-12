@@ -1,0 +1,167 @@
+<header>IMAP Mailbox Migrator</header>
+
+This module allows you to migrate email mailboxes from one IMAP server to
+another using the imapsync tool. It provides a user-friendly interface to
+configure and execute mailbox migrations with real-time progress monitoring.
+<p></p>
+
+<h3>Prerequisites</h3>
+Before using this module, ensure that:
+<ul>
+  <li>The <b>imapsync</b> tool is installed on your system</li>
+  <li>
+    You have access credentials for both source and destination IMAP servers
+  </li>
+  <li>Network connectivity between your server and both IMAP servers</li>
+</ul>
+
+<h3>Tab: Credentials</h3>
+This is the main configuration tab where you set up the connection details:
+
+<b>Source Server:</b>
+<ul>
+  <li>
+    <b>IMAP Server:</b> The hostname or IP address of your source IMAP server
+  </li>
+  <li><b>User:</b> The username for the source mailbox</li>
+  <li><b>Password:</b> The password for the source mailbox</li>
+  <li><b>Security:</b> Choose between None, SSL, or TLS for the connection</li>
+</ul>
+
+<b>Destination Server:</b>
+<ul>
+  <li>
+    <b>IMAP Server:</b> The hostname or IP address of your destination IMAP
+    server (defaults to localhost)
+  </li>
+  <li><b>User:</b> The username for the destination mailbox</li>
+  <li><b>Password:</b> The password for the destination mailbox</li>
+  <li><b>Security:</b> Choose between None, SSL, or TLS for the connection</li>
+</ul>
+
+<h3>Tab: Advanced</h3>
+Advanced configuration options for the migration:
+
+<ul>
+  <li><b>Maximum size:</b> Limit message size in MB</li>
+  <li><b>Minimum size:</b> Minimum message size in MB</li>
+  <li><b>Maximum age:</b> Skip messages older than specified days</li>
+  <li><b>Minimum age:</b> Skip messages newer than specified days</li>
+  <li>
+    <b>Age selection type:</b> Choose how to combine maxage and minage filters:
+    <ul>
+      <li><b>Default:</b> Use maxage or minage independently</li>
+      <li>
+        <b>Intersection:</b> Messages must be within both maxage AND minage
+        range
+      </li>
+      <li><b>Union:</b> Messages can be within maxage OR minage range</li>
+    </ul>
+  </li>
+  <li>
+    <b>Delete from source:</b> Remove messages from source server after
+    successful migration
+  </li>
+  <li>
+    <b>Skip empty folders:</b> Empty source folders are not created on
+    destination
+  </li>
+  <li>
+    <b>Source connection timeout:</b> Timeout for source server connections in
+    seconds (default: 120)
+  </li>
+  <li>
+    <b>Destination connection timeout:</b> Timeout for destination server
+    connections in seconds (default: 120)
+  </li>
+  <li>
+    <b>Send email report to source:</b> Choose whether to send the final
+    migration report to the source mailbox INBOX (default: No)
+  </li>
+  <li>
+    <b>Send email report to destination:</b> Choose whether to send the final
+    migration report to the destination mailbox INBOX (default: Yes)
+  </li>
+  <li>
+    <b>Include folders:</b> Specify folder patterns to include (e.g.,
+    "INBOX,Sent,Drafts")
+  </li>
+  <li>
+    <b>Exclude folders:</b> Specify folder patterns to exclude (e.g.,
+    "Trash,Spam")
+  </li>
+  <li><b>Skip errors:</b> Continue migration even if some messages fail</li>
+</ul>
+
+<h3>Tab: Debug</h3>
+Debugging and logging options:
+
+<ul>
+  <li><b>Debug Migrator:</b> Enable migrator debug</li>
+  <li><b>Debug mode:</b> Enable debug information</li>
+  <li>
+    <b>Just connect to servers:</b> Only connect to both servers and print
+    useful information
+  </li>
+  <li>
+    <b>Dry run:</b> Test mode - shows what would be migrated without actually
+    doing it
+  </li>
+  <li><b>Show commands:</b> Display the imapsync commands being executed</li>
+  <li><b>Debug folders:</b> Debug mode for the folders part only</li>
+  <li>
+    <b>Debug message content:</b> Debug content of the messages transferred
+    (huge output)
+  </li>
+  <li><b>Debug flags:</b> Debug mode for flags</li>
+  <li>
+    <b>Debug IMAP for source server:</b> IMAP debug mode for host1 (very
+    verbose)
+  </li>
+  <li>
+    <b>Debug IMAP for destination server:</b> IMAP debug mode for host2 (very
+    verbose)
+  </li>
+  <li>
+    <b>Debug memory consumption:</b> Debug mode showing memory consumption after
+    each copy
+  </li>
+  <li><b>SSL debug:</b> SSL debug mode from 0 to 4</li>
+</ul>
+
+<h3>Migration Process</h3>
+Once you've configured all settings:
+<ol>
+  <li>Click the <b>Start Migration</b> button</li>
+  <li>The migration will run in the background</li>
+  <li>Real-time progress will be displayed in the log window</li>
+  <li>The log updates automatically every 5 seconds</li>
+  <li>Migration completes when you see "Exiting with return value"</li>
+</ol>
+
+<h3>Important Notes</h3>
+<ul>
+  <li>Large mailboxes may take significant time to migrate</li>
+  <li>Ensure sufficient disk space on both servers</li>
+  <li>Network stability is crucial for successful migration</li>
+  <li>Consider using SSL/TLS for secure connections</li>
+  <li>Test with a small mailbox first using dry-run mode</li>
+</ul>
+
+<hr />
+
+<h3>Useful Links</h3>
+<ul>
+  <li>
+    <a href="https://github.com/imapsync/imapsync" target="_blank"
+      >imapsync Documentation</a
+    >
+    - Official documentation and examples
+  </li>
+  <li>
+    <a href="https://github.com/wmolinjr/imap-migrator" target="_blank"
+      >IMAP Migrator Repository</a
+    >
+    - Source code and issues
+  </li>
+</ul>

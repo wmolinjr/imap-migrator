@@ -1,0 +1,114 @@
+index_title=Migrador de Contas IMAP
+index_desc=Migrador de caixas de correio usando IMAP
+index_header=Configurações da Migração
+index_source_header=Origem
+index_dest_header=Destino
+index_host=Servidor IMAP
+index_user=Usuário
+index_pass=Senha
+index_ssl_none=Nenhum
+index_ssl_ssl=SSL
+index_ssl_tls=TLS
+index_ssl_label=Segurança
+index_migrate_button=Iniciar Migração
+
+# Tab labels
+tab_credentials=Credenciais
+tab_advanced=Avançado
+tab_debug=Depurar
+
+# Folders fields
+folders_include=Incluir pastas
+folders_exclude=Excluir pastas
+
+# Advanced tab
+advanced_header=Configurações Avançadas
+advanced_max_size=Tamanho máximo (MB)
+advanced_min_size=Tamanho mínimo (MB)
+advanced_max_age=Idade máxima (dias)
+advanced_min_age=Idade mínima (dias)
+advanced_age_selection=Tipo de seleção por idade
+advanced_age_default=Padrão (maxage ou minage)
+advanced_age_intersection=Intersecção (maxage E minage)
+advanced_age_union=União (maxage OU minage)
+advanced_timeout1=Timeout de conexão da origem (segundos)
+advanced_timeout2=Timeout de conexão do destino (segundos)
+advanced_delete_source=Excluir mensagens da origem após migração
+advanced_email_report_source=Enviar relatório por email na origem
+advanced_email_report_dest=Enviar relatório por email no destino
+advanced_email_report_yes=Sim (emailreport)
+advanced_email_report_no=Não (noemailreport)
+advanced_skip_empty_folders=Pular pastas vazias
+advanced_skip_errors=Pular erros e continuar
+
+# Debug tab
+debug_header=Configurações de Depuração
+debug_debug=Modo debug
+debug_show_commands=Mostrar comandos executados
+debug_dry_run=Modo de teste (não migrar realmente)
+debug_debug_folders=Debug de pastas
+debug_debug_content=Debug de conteúdo das mensagens
+debug_debug_flags=Debug de flags
+debug_debug_imap1=Debug IMAP do servidor de origem
+debug_debug_imap2=Debug IMAP do servidor de destino
+debug_debug_memory=Debug de consumo de memória
+debug_just_connect=Apenas conectar aos servidores
+debug_debug_ssl=Debug SSL (0-4)
+debug_migrator_debug=Debug do Migrador
+
+migrate_title=Migração em Andamento
+migrate_status_header=Status da Migração em Tempo Real
+migrate_status_desc=A migração foi iniciada em background. O log abaixo será atualizado automaticamente a cada 5 segundos.
+migrate_complete=Migração Concluída.
+migrate_log_label=Log do Imapsync
+migrate_back=Voltar para o formulário de migração.
+
+error_pass_creation=Falha ao criar arquivo temporário de senha.
+error_missing_params=Parâmetros obrigatórios não foram preenchidos. 
+
+# Status messages
+status_awaiting_js=Aguardando JavaScript...
+status_js_loaded=JavaScript carregado, iniciando monitoramento...
+status_searching_updates=Buscando atualizações...
+status_log_updated=Log atualizado com sucesso
+status_waiting_updates=Aguardando novas atualizações...
+status_migration_complete=Migração concluída!
+status_error_search=Erro na busca de atualizações
+status_error_log_file=Erro: Arquivo de log não encontrado
+status_test_js=JavaScript está funcionando!
+status_test_server=Servidor funcionando!
+status_test_log=Log funcionando!
+status_test_error=Erro no teste
+
+# Error messages
+error_imapsync_not_found=ERRO: O executável imapsync não foi encontrado.
+error_command_build=ERRO: Falha ao construir comando imapsync.
+error_log_file_not_found=ERRO: Não foi possível encontrar o nome do arquivo de log.
+error_js_error=ERRO DE JAVASCRIPT
+error_network_error=Erro de rede
+error_access_denied=Acesso ao arquivo de log negado.
+error_waiting_migration=Aguardando o início do processo de migração...
+
+# Test buttons
+test_js_button=Testar JavaScript
+test_server_button=Testar Servidor
+test_log_button=Testar Log
+
+# Test messages
+test_js_success=TESTE: JavaScript está funcionando!
+test_server_success=TESTE SERVIDOR: Conectividade OK!
+test_server_error=TESTE SERVIDOR: Erro
+test_log_success=TESTE LOG: Arquivo encontrado!
+test_log_error=TESTE LOG: Erro
+test_elements_not_found=Erro: Elementos não encontrados
+test_log_file_not_defined=Erro: Arquivo de log não definido
+test_testing_server=Testando servidor...
+test_testing_log=Testando arquivo de log...
+test_size=Tamanho
+test_characters=caracteres
+test_status=Status
+test_debug=DEBUG
+
+# Migration messages
+migration_starting=Iniciando a migração...
+migration_complete=Migração Concluída. 
