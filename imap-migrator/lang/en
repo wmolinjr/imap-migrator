@@ -54,31 +54,13 @@ debug_debug_imap2=Debug IMAP for destination server
 debug_debug_memory=Debug memory consumption
 debug_just_connect=Just connect to servers
 debug_debug_ssl=SSL debug (0-4)
-debug_migrator_debug=Migrator Debug
 
 migrate_title=Migration in Progress
 migrate_status_header=Real-time Migration Status
-migrate_status_desc=The migration has been started in background. The log below will be updated automatically every 5 seconds.
+migrate_status_desc=The migration has been started in background. The log below will be updated automatically every 3 seconds.
 migrate_complete=Migration Complete.
-migrate_log_label=Imapsync Log
 migrate_back=Back to migration form.
-
-error_pass_creation=Failed to create temporary password file.
-error_missing_params=Required parameters were not filled. 
-
-# Status messages
-status_awaiting_js=Waiting for JavaScript...
-status_js_loaded=JavaScript loaded, starting monitoring...
-status_searching_updates=Searching for updates...
-status_log_updated=Log updated successfully
-status_waiting_updates=Waiting for new updates...
-status_migration_complete=Migration complete!
-status_error_search=Error searching for updates
-status_error_log_file=Error: Log file not found
-status_test_js=JavaScript is working!
-status_test_server=Server is working!
-status_test_log=Log is working!
-status_test_error=Test error
+imap_migration_log=IMAP Migration Log
 
 # Error messages
 error_imapsync_not_found=ERROR: The imapsync executable was not found.
@@ -88,29 +70,9 @@ error_js_error=JAVASCRIPT ERROR
 error_network_error=Network error
 error_access_denied=Access to log file denied.
 error_waiting_migration=Waiting for migration process to start...
-
-# Test buttons
-test_js_button=Test JavaScript
-test_server_button=Test Server
-test_log_button=Test Log
-
-# Test messages
-test_js_success=TEST: JavaScript is working!
-test_server_success=TEST SERVER: Connectivity OK!
-test_server_error=TEST SERVER: Error
-test_log_success=TEST LOG: File found!
-test_log_error=TEST LOG: Error
-test_elements_not_found=Error: Elements not found
-test_log_file_not_defined=Error: Log file not defined
+error_missing_params=Required parameters were not filled.
 
 # Migration messages
 migration_starting=Starting migration...
 migration_complete=Migration Complete.
 
-# Test messages
-test_testing_server=Testing server...
-test_testing_log=Testing log file...
-test_size=Size
-test_characters=characters
-test_status=Status
-test_debug=DEBUG 

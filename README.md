@@ -5,7 +5,7 @@ A simple and effective Webmin/Virtualmin module to migrate email accounts betwee
 ## ✨ Features
 
 - **🖥️ User-Friendly Interface:** Clean and intuitive form to configure source and destination server details
-- **📊 Real-Time Monitoring:** Live log viewer that updates automatically every 2 seconds, showing `imapsync` output in real-time
+- **📊 Real-Time Monitoring:** Live log viewer that refreshes automatically, showing `imapsync` output as it progresses
 - **🔒 Secure Password Handling:** Passwords are stored in temporary files with secure permissions and automatically deleted after migration
 - **🎛️ Advanced Options:** Support for SSL/TLS connections, folder filtering, size/age restrictions, and email reports
 - **🐛 Debug Mode:** Built-in debugging tools for troubleshooting migration issues
@@ -89,11 +89,14 @@ If you want to modify the module or build the package from source:
    ```
 
 2. Run the build script:
-
+#### Linux
    ```bash
    ./build.sh
    ```
-
+#### Windows (PowerShell)
+   ```bash
+   ./build.bat
+   ```
 3. The `imap-migrator.wbm.gz` package will be created in the root directory
 
 ### Development Setup
@@ -115,9 +118,8 @@ chmod +x build.sh
 ```
 imap-migrator/
 ├── index.cgi              # Main interface
-├── migrate.cgi            # Migration execution
-├── status.cgi             # Real-time log status
-├── imap-migrator.js       # Frontend JavaScript
+├── migrate.cgi            # Migration execution and log display
+├── status.cgi             # Log status endpoint
 ├── imap-migrator-lib.pl   # Backend library
 ├── lang/                   # Translation files
 │   ├── en                 # English translations
