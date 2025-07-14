@@ -117,15 +117,22 @@ chmod +x build.sh
 
 ```
 imap-migrator/
-├── index.cgi              # Main interface
-├── migrate.cgi            # Migration execution and log display
-├── status.cgi             # Log status endpoint
-├── imap-migrator-lib.pl   # Backend library
-├── lang/                   # Translation files
-│   ├── en                 # English translations
-│   └── pt                 # Portuguese translations
-├── help/                   # Help documentation
-└── build.sh               # Build script
+├── assets/                # CSS and JavaScript files
+│   ├── terminal.min.css  # Terminal styling
+│   ├── terminal.min.js   # Terminal functionality
+├── help/                  # Help documentation
+│   ├── help.html         # English help
+│   └── help.pt.html      # Portuguese help
+├── lang/                  # Translation files
+│   ├── en                # English translations
+│   └── pt                # Portuguese translations
+├── index.cgi             # Main interface
+├── migrate.cgi           # Migration execution
+├── log_viewer.cgi        # Real-time log viewer
+├── imap-migrator-lib.pl  # Backend library
+├── install_check.pl      # Installation check script
+├── module.info           # Module information (English)
+└── module.info.pt        # Module information (Portuguese)
 ```
 
 ## 🐛 Troubleshooting
