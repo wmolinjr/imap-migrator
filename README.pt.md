@@ -5,7 +5,7 @@ Um módulo simples e eficaz para Webmin/Virtualmin que migra contas de e-mail en
 ## ✨ Funcionalidades
 
 - **🖥️ Interface Amigável:** Formulário limpo e intuitivo para configurar detalhes dos servidores de origem e destino
-- **📊 Monitoramento em Tempo Real:** Visualizador de log ao vivo que atualiza automaticamente a cada 2 segundos, mostrando a saída do `imapsync` em tempo real
+- **📊 Monitoramento em Tempo Real:** Visualizador de log ao vivo que atualiza automaticamente, mostrando a saída do `imapsync` conforme progride
 - **🔒 Tratamento Seguro de Senhas:** Senhas são armazenadas em arquivos temporários com permissões seguras e automaticamente deletadas após a migração
 - **🎛️ Opções Avançadas:** Suporte para conexões SSL/TLS, filtros de pastas, restrições de tamanho/idade e relatórios por e-mail
 - **🐛 Modo Debug:** Ferramentas de depuração integradas para solucionar problemas de migração
@@ -90,8 +90,13 @@ Se você quiser modificar o módulo ou compilar o pacote a partir do código fon
 
 2. Execute o script de compilação:
 
+#### Linux
    ```bash
    ./build.sh
+   ```
+#### Windows (PowerShell)
+   ```bash
+   ./build.bat
    ```
 
 3. O pacote `imap-migrator.wbm.gz` será criado no diretório raiz
@@ -114,16 +119,22 @@ chmod +x build.sh
 
 ```
 imap-migrator/
-├── index.cgi              # Interface principal
-├── migrate.cgi            # Execução da migração
-├── status.cgi             # Status do log em tempo real
-├── imap-migrator.js       # JavaScript frontend
-├── imap-migrator-lib.pl   # Biblioteca backend
-├── lang/                   # Arquivos de tradução
-│   ├── en                 # Traduções em inglês
-│   └── pt                 # Traduções em português
-├── help/                   # Documentação de ajuda
-└── build.sh               # Script de compilação
+├── assets/                # Arquivos CSS e JavaScript
+│   ├── terminal.min.css  # Estilização do terminal
+│   ├── terminal.min.js   # Funcionalidade do terminal
+├── help/                  # Documentação de ajuda
+│   ├── help.html         # Ajuda em inglês
+│   └── help.pt.html      # Ajuda em português
+├── lang/                  # Arquivos de tradução
+│   ├── en                # Traduções em inglês
+│   └── pt                # Traduções em português
+├── index.cgi             # Interface principal
+├── migrate.cgi           # Execução da migração
+├── log_viewer.cgi        # Visualizador de log em tempo real
+├── imap-migrator-lib.pl  # Biblioteca backend
+├── install_check.pl      # Script de verificação de instalação
+├── module.info           # Informações do módulo (Inglês)
+└── module.info.pt        # Informações do módulo (Português)
 ```
 
 ## 🐛 Solução de Problemas

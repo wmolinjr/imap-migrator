@@ -1,0 +1,229 @@
+/* Terminal-like styling for log viewer */
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: "Courier New", Courier, monospace; 
+    background-color: #1e1e1e; /* Dark background like a terminal */
+    color: #f0f0f0; /* Light text color */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+
+pre { 
+    margin: 0; 
+    padding: 0;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    line-height: 1.3;
+    font-size: 14px;
+    color: #f0f0f0; /* Light text color */
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+}
+
+/* Style for paragraph elements inside pre */
+pre p {
+    margin: 0;
+    padding: 3px 10px;
+    line-height: 1.5;
+}
+
+/* Improve readability with a subtle background for alternate lines */
+pre p:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.03);
+    display: block;
+    width: 100%;
+}
+
+/* Terminal header styling */
+.terminal-header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+/* Terminal window buttons */
+.terminal-header:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff5f56; /* Red close button */
+    margin-right: 5px;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f; /* Yellow minimize and green maximize buttons */
+}
+
+/* Terminal title */
+.terminal-title {
+    flex-grow: 1;
+    text-align: center;
+    margin-left: -57px; /* Offset for the buttons to center the title */
+    font-weight: bold;
+}
+
+
+/* Error message styling */
+.error {
+    color: #ff5555; /* Red for errors */
+}
+
+
+/* Success message styling */
+.success {
+    color: #55ff55; /* Green for success messages */
+}
+
+/* Info message styling */
+.info {
+    color: #5555ff; /* Blue for info messages */
+}
+
+
+/* Cursor styling */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: #f0f0f0;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+    margin-left: 2px;
+}
+
+/* Cursor blinking animation */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* IMAP Migration specific styling */
+
+/* Folder listings */
+.bracket  {
+    color: #8be9fd; /* Light blue for folder names */
+    font-weight: bold;
+}
+
+/* Progress indicators (ETA lines) */
+.eta {
+    color: #f1fa8c; /* Light yellow for ETA lines */
+    font-style: italic;
+}
+
+/* Statistics sections */
+.stat {
+    color: #50fa7b; /* Light green for statistics */
+}
+
+
+
+/* File paths */
+.folder {
+    color: #f1fa8c; /* Light yellow for file paths */
+}
+
+/* Numeric values */
+.number {
+    color: #bd93f9; /* Purple for numbers */
+    font-weight: bold;
+}
+
+/* Biggest message size */
+.biggest {
+    color: #ff79c6; /* Pink for biggest message size */
+    font-weight: bold;
+}
+
+/* Headers and section titles */
+.section-header {
+    color: #bb71ff; /* Red for section headers */
+    font-weight: bold;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+/* Host1 lines */
+.host_1 {
+    color: #fbeed0; /* Light green for Host1 */
+}
+
+/* Host2 lines */
+.host_2 {
+    color: #ffe2ac; /* Pink for Host2 */
+}
+
+/* Host2-Host1 lines */
+.host_1_2 {
+    color: #fded9d; /* Light blue for Host2-Host1 */
+}
+
+/* Single lines (all other lines) */
+.single_line {
+    /* Default styling, can be customized if needed */
+}
+
+/* Message counts */
+.message-count {
+    color: #f1fa8c; /* Light yellow for message counts */
+    font-weight: bold;
+}
+
+.error{
+    color: #ff5555;
+}
+
+
+/* Timestamps */
+.timestamp {
+    color: #bd93f9; /* Purple for timestamps */
+    font-style: italic;
+}
+
+/* Command arguments */
+.command-arg {
+    color: #ff79c6; /* Pink for command arguments */
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .terminal-text {
+        display: none; /* Hide terminal text title on mobile devices */
+    }
+    .terminal-title{
+        text-align: right;
+    }
+}

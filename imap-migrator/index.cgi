@@ -105,8 +105,6 @@ print ui_tabs_end_tab();
 print ui_tabs_start_tab("tab", "debug");
 print ui_table_start($text{'debug_header'}, "width=100%", 2);
 
-print ui_table_row("$text{'debug_migrator_debug'}:",
-    ui_checkbox("migrator_debug", undef, undef), undef, ["width=20%", "width=80%"]);
 print ui_table_row("$text{'debug_debug'}:",
     ui_checkbox("debug", undef, undef), undef, ["width=20%", "width=80%"]);
 print ui_table_row("$text{'debug_just_connect'}:",

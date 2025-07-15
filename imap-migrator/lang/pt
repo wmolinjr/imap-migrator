@@ -54,31 +54,13 @@ debug_debug_imap2=Debug IMAP do servidor de destino
 debug_debug_memory=Debug de consumo de memória
 debug_just_connect=Apenas conectar aos servidores
 debug_debug_ssl=Debug SSL (0-4)
-debug_migrator_debug=Debug do Migrador
 
 migrate_title=Migração em Andamento
 migrate_status_header=Status da Migração em Tempo Real
-migrate_status_desc=A migração foi iniciada em background. O log abaixo será atualizado automaticamente a cada 5 segundos.
+migrate_status_desc=A migração foi iniciada em background. O log abaixo será atualizado automaticamente a cada 3 segundos.
 migrate_complete=Migração Concluída.
-migrate_log_label=Log do Imapsync
 migrate_back=Voltar para o formulário de migração.
-
-error_pass_creation=Falha ao criar arquivo temporário de senha.
-error_missing_params=Parâmetros obrigatórios não foram preenchidos. 
-
-# Status messages
-status_awaiting_js=Aguardando JavaScript...
-status_js_loaded=JavaScript carregado, iniciando monitoramento...
-status_searching_updates=Buscando atualizações...
-status_log_updated=Log atualizado com sucesso
-status_waiting_updates=Aguardando novas atualizações...
-status_migration_complete=Migração concluída!
-status_error_search=Erro na busca de atualizações
-status_error_log_file=Erro: Arquivo de log não encontrado
-status_test_js=JavaScript está funcionando!
-status_test_server=Servidor funcionando!
-status_test_log=Log funcionando!
-status_test_error=Erro no teste
+imap_migration_log=Log de Migração IMAP
 
 # Error messages
 error_imapsync_not_found=ERRO: O executável imapsync não foi encontrado.
@@ -88,26 +70,7 @@ error_js_error=ERRO DE JAVASCRIPT
 error_network_error=Erro de rede
 error_access_denied=Acesso ao arquivo de log negado.
 error_waiting_migration=Aguardando o início do processo de migração...
-
-# Test buttons
-test_js_button=Testar JavaScript
-test_server_button=Testar Servidor
-test_log_button=Testar Log
-
-# Test messages
-test_js_success=TESTE: JavaScript está funcionando!
-test_server_success=TESTE SERVIDOR: Conectividade OK!
-test_server_error=TESTE SERVIDOR: Erro
-test_log_success=TESTE LOG: Arquivo encontrado!
-test_log_error=TESTE LOG: Erro
-test_elements_not_found=Erro: Elementos não encontrados
-test_log_file_not_defined=Erro: Arquivo de log não definido
-test_testing_server=Testando servidor...
-test_testing_log=Testando arquivo de log...
-test_size=Tamanho
-test_characters=caracteres
-test_status=Status
-test_debug=DEBUG
+error_missing_params=Parâmetros obrigatórios não foram preenchidos.
 
 # Migration messages
 migration_starting=Iniciando a migração...
